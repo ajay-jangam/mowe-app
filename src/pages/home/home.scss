@@ -1,0 +1,29 @@
+@import "../../mixin.scss";
+
+.homePage {
+	.trending {
+		.contentWrapper {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 20px;
+		}
+		&__carousalSection {
+			position: relative;
+			margin-bottom: 70px;
+		}
+
+		&__carousalTitle {
+			font-size: 16px;
+			color: #fff;
+			font-weight: normal;
+
+			@include md {
+				font-size: 24px;
+			}
+		}
+
+		&__carousalTitle {
+		}
+	}
+}
