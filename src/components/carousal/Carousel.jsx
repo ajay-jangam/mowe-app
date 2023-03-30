@@ -13,7 +13,7 @@ import CircleRating from "../circleRating/CircleRating"
 import Genres from "../genres/Genres"
 import { useNavigate } from "react-router-dom"
 
-export default function Carousel({ data, loading, endpoint }) {
+export default function Carousel({ data, loading, endpoint, title }) {
 	const carouselContainer = useRef()
 	const navigate = useNavigate()
 	const { url } = useSelector((state) => state.home)
@@ -49,6 +49,7 @@ export default function Carousel({ data, loading, endpoint }) {
 	return (
 		<div className='carousel'>
 			<ContentWrapper>
+				{title && <div className='carouselTitle'>{title}</div>}
 				<BsFillArrowLeftCircleFill
 					className='carouselLeftNav arrow'
 					onClick={() => navigation("left")}
@@ -64,7 +65,6 @@ export default function Carousel({ data, loading, endpoint }) {
 							const posterUrl = item.poster_path
 								? url.poster + item.poster_path
 								: PosterFallback
-
 							return (
 								<div
 									className='carouselItem'
@@ -83,12 +83,12 @@ export default function Carousel({ data, loading, endpoint }) {
 											alt={item.original_title}
 										/>
 										<CircleRating
-											rating={item.vote_average.toFixed(
+											rating={item?.vote_average?.toFixed(
 												1
 											)}
 										/>
 										<Genres
-											data={item.genre_ids.slice(0, 2)}
+											data={item?.genre_ids?.slice(0, 2)}
 										/>
 									</div>
 									<div className='textBlock'>

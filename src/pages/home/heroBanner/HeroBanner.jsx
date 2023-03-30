@@ -16,7 +16,8 @@ export default function HeroBanner() {
 	useEffect(() => {
 		const bgImage =
 			url?.backdrop +
-			data?.results?.[Math.floor(Math.random() * 20)].backdrop_path
+			data?.results?.[Math.floor(Math.random() * data?.results.length)]
+				.backdrop_path
 		setBackgroundImage(bgImage)
 	}, [data])
 
@@ -38,7 +39,9 @@ export default function HeroBanner() {
 			<ContentWrapper>
 				<div className={"heroBanner__container"}>
 					<div className={"heroBanner__content"}>
-						<span className={"heroBanner__title"}>Welcome</span>
+						<span className={"heroBanner__title"}>
+							The Mo"<strong>We</strong>" Way Of Life
+						</span>
 						<span className={"heroBanner__subTitle"}>
 							Millions of movies, TV shows and peoples to
 							discover. Explore now
