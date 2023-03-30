@@ -70,7 +70,7 @@ export default function DetailsBanner({ video, crew }) {
 										<Genres data={_genres} />
 										<div className='row'>
 											<CircleRating
-												rating={data.vote_average.toFixed(
+												rating={data?.vote_average?.toFixed(
 													1
 												)}
 											/>
@@ -78,7 +78,7 @@ export default function DetailsBanner({ video, crew }) {
 												className='playbtn'
 												onClick={() => {
 													setShow(true)
-													setVideoId(video.key)
+													setVideoId(video?.key)
 												}}>
 												<PlayButton />
 												<span className='text'>

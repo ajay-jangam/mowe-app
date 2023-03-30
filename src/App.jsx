@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import "./App.css"
-import { fetchDatafromApi } from "./utils/api"
+import { fetchDataFromApi } from "./utils/api"
 import { useDispatch } from "react-redux"
 import { getApiConfigurations, getGenres } from "./store/homeSlice"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
@@ -23,7 +23,7 @@ function App() {
 
 	// Fetch image urls from server for multiple image types
 	const fetchApiConfig = () => {
-		fetchDatafromApi("/configuration").then((response) => {
+		fetchDataFromApi("/configuration").then((response) => {
 			const imageUrl = {
 				backdrop: response.images.secure_base_url + "original",
 				poster: response.images.secure_base_url + "original",
@@ -42,7 +42,7 @@ function App() {
 		const allGenres = {}
 
 		endPoints.forEach((url) => {
-			promises.push(fetchDatafromApi(`/genre/${url}/list`))
+			promises.push(fetchDataFromApi(`/genre/${url}/list`))
 		})
 
 		const data = await Promise.all(promises)

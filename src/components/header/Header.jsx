@@ -111,7 +111,7 @@ export default function Header() {
 						<div className='searchBar__searchInput'>
 							<input
 								type='text'
-								placeholder='Search for a movie orTV show...'
+								placeholder='Search for entertainment...'
 								value={query}
 								onChange={(e) => setQuery(e.target.value)}
 								onKeyDown={(e) => searchQueryHandler(e)}

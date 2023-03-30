@@ -24,21 +24,23 @@ export default function VideosSection({ data, loading }) {
 	return (
 		<div className='videosSection'>
 			<ContentWrapper>
-				<div className='sectionHeading'>Official Videos</div>
+				<div className='sectionHeading'>
+					{data?.results ? `Official Videos` : ``}
+				</div>
 				{!loading ? (
 					<div className='videos'>
 						{data?.results?.map((video) => {
 							return (
 								<div
-									key={video.id}
+									key={video?.id}
 									onClick={() => {
-										setVideoId(video.key)
+										setVideoId(video?.key)
 										setShow(true)
 									}}
 									className='videoItem'>
 									<div className='videoThumbnail'>
 										<Img
-											src={`https://img.youtube.com/vi/${video.key}/mqdefault.jpg`}
+											src={`https://img.youtube.com/vi/${video?.key}/mqdefault.jpg`}
 										/>
 										<PlayButton />
 									</div>

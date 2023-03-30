@@ -69,7 +69,6 @@ export default function Carousel({ data, loading, endpoint, title }) {
 								<div
 									className='carouselItem'
 									onClick={() => {
-										console.log("endpoint", endpoint)
 										navigate(
 											`/${item.media_type || endpoint}/${
 												item.id

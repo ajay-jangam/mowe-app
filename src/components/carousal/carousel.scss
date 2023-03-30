@@ -159,9 +159,6 @@
 					margin-bottom: 10px;
 					line-height: 24px;
 					@include ellipsis(1);
-					@include md {
-						font-size: 20px;
-					}
 				}
 				.date {
 					font-size: 14px;

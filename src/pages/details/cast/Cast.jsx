@@ -25,8 +25,8 @@ export default function Cast({ data, loading }) {
 				{!loading ? (
 					<div className='listItems'>
 						{data?.map((item) => {
-							const profileUrl = item.profile_path
-								? url.profile + item.profile_path
+							const profileUrl = item?.profile_path
+								? url.profile + item?.profile_path
 								: avatar
 							return (
 								<div key={item.id} className='listItem'>
